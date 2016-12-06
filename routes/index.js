@@ -1,3 +1,9 @@
-/**
- * Created by zhugod on 2016-12-06.
- */
+module.exports = function (app) {
+    app.get('/', function (req, res) {
+        res.redirect('/posts');
+    });
+    app.use('/signup', require('./signup'));
+    app.use('/signin', require('./signin'));
+    app.use('/signout', require('./signout'));
+    app.use('/posts', require('./posts'));
+};
